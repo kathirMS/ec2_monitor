@@ -1,14 +1,14 @@
 #<----profile of the provider----->
  
-   variable "provider_profile"{
-   type="string"
+   variable 'rovider_profile'{
+   type='string'
    default="aws-devops-test"
 }
 
 #<----region of the provider----->
 
-variable "provider_region"{
-   type="string"
+variable 'provider_region'{
+   type='string'
    default="us-east-1"
 }
 
