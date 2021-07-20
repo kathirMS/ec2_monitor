@@ -1,9 +1,5 @@
 #<----profile of the provider----->
  
-   variable "provider_profile"{
-   type=string
-   default="aws-devops-test"
-}
 
 #<----region of the provider----->
 
