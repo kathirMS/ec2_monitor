@@ -13,7 +13,7 @@ pipeline {
                             sed -i -e "s|us-east-1|${AWS_REGION}|g" -e "s|{account-name}|${AWS_PROFILE}|g" main.tf
                             sudo terraform init
                             sudo terraform plan
-                            sudo terraform apply -var provider_profile=${AWS_PROFILE} -auto-approve -lock=false
+                            sudo terraform apply -var provider_profile="kathir123" -auto-approve -lock=false
                             
                             '''
                     }
