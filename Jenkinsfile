@@ -12,8 +12,8 @@ pipeline {
                             cd /var/lib/jenkins/workspace/Mydemo
                             sed -i -e "s|us-east-1|${AWS_REGION}|g" -e "s|{account-name}|${AWS_PROFILE}|g" main.tf
                             sudo terraform init
-                            sudo terraform plan  -var provider_profile="kathir123"
-                            sudo terraform apply  -auto-approve
+                            sudo terraform plan  
+                            sudo terraform apply -var provider_profile="${AWS_PROFILE}" -var provider_region="${AWS_REGION}" -var email="${EMAIL}" -var name="${SNS_NAME}" -var tag_key="${EC2_TAG_KEY}" -var tag_value="${EC2_TAG_VALUE}" -var customer="${CUSTER_TAG_VALUE}" -var cost_center="${COST_CENTER_TAG_VALUE}" -auto-approve -lock=false
                             
                             '''
                     }
