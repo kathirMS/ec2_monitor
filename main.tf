@@ -8,10 +8,6 @@ terraform {
 }
 
 
-variable "provider_profile" {
-  type = string
-}
-
 #<------provider----->
 
 provider "aws" {
