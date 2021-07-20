@@ -21,7 +21,7 @@ pipeline {
                     catch (Exception err) {
                         currentBuild.result = 'FAILED'
                         sh '''#!/bin/bash
-                               echo "cant deploy sumologic collector"
+                               echo "cant deploy ec2 instance state change alert"
                                exit 1
                                '''
                     }
