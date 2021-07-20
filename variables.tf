@@ -1,6 +1,6 @@
 #<----profile of the provider----->
  
-   variable "rovider_profile"{
+   variable "provider_profile"{
    type=string
    default="aws-devops-test"
 }
