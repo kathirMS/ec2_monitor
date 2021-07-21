@@ -1,15 +1,18 @@
 pipeline {
-    agent any
-    stages {
-    
-        
+    agent {
+		node {
+			//label "${params.NODE}"
+			customWorkspace "/home/ubuntu/workspace/ec2_state_change_alert_automation-script-${AWS_REGION}"
+		}
+    }
+    stages {            
         stage ('Creating EC2 Instance State Change Alert') {
             steps {
                 script {
                     try {
                          
                         sh '''#!/bin/bash
-                            cd /var/lib/jenkins/workspace/Mydemo
+                            cd $WORKSPACE
                             sed -i -e "s|us-east-1|${AWS_REGION}|g" -e "s|{account-name}|${AWS_PROFILE}|g" main.tf
                             sudo terraform init
                             sudo terraform plan  
@@ -32,4 +35,4 @@ pipeline {
       
     }
     
-}    
+} 
