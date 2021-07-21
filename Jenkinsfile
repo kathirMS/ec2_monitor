@@ -1,7 +1,7 @@
 pipeline {
     agent {
 		node {
-			//label "${params.NODE}"
+			label "master"
 			customWorkspace "/home/ubuntu/workspace/ec2_state_change_alert_automation-script-${AWS_REGION}"
 		}
     }
